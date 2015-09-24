@@ -1,0 +1,112 @@
+//== Media queries breakpoints
+//
+//## Define the breakpoints at which your layout will change, adapting to different screen sizes.
+
+// Extra small screen / phone
+//** Deprecated `$screen-xs` as of v3.0.1
+$screen-xs:                  480px !default;
+//** Deprecated `$screen-xs-min` as of v3.2.0
+$screen-xs-min:              $screen-xs !default;
+//** Deprecated `$screen-phone` as of v3.0.1
+$screen-phone:               $screen-xs-min !default;
+
+// Small screen / tablet
+//** Deprecated `$screen-sm` as of v3.0.1
+$screen-sm:                  768px !default;
+$screen-sm-min:              $screen-sm !default;
+//** Deprecated `$screen-tablet` as of v3.0.1
+$screen-tablet:              $screen-sm-min !default;
+
+// Medium screen / desktop
+//** Deprecated `$screen-md` as of v3.0.1
+$screen-md:                  992px !default;
+$screen-md-min:              $screen-md !default;
+//** Deprecated `$screen-desktop` as of v3.0.1
+$screen-desktop:             $screen-md-min !default;
+
+// Large screen / wide desktop
+//** Deprecated `$screen-lg` as of v3.0.1
+$screen-lg:                  1200px !default;
+$screen-lg-min:              $screen-lg !default;
+//** Deprecated `$screen-lg-desktop` as of v3.0.1
+$screen-lg-desktop:          $screen-lg-min !default;
+
+// So media queries don't overlap when required, provide a maximum
+$screen-xs-max:              ($screen-sm-min - 1) !default;
+$screen-sm-max:              ($screen-md-min - 1) !default;
+$screen-md-max:              ($screen-lg-min - 1) !default;
+
+
+//== Grid system
+//
+//## Define your custom responsive grid.
+
+//** Number of columns in the grid.
+$grid-columns:              12 !default;
+//** Padding between columns. Gets divided in half for the left and right.
+$grid-gutter-width:         30px !default;
+// Navbar collapse
+//** Point at which the navbar becomes uncollapsed.
+$grid-float-breakpoint:     $screen-md-min !default;
+//** Point at which the navbar begins collapsing.
+$grid-float-breakpoint-max: ($grid-float-breakpoint - 1) !default;
+
+// Glyphicons font path
+$icon-font-path:        "../fonts/";
+
+// Grid settings
+$main-sm-columns:       12;
+$sidebar-sm-columns:    4;
+
+// Colors
+$brand-primary:         #F1BF00;
+$brand-red:             #AA151B;
+
+//** Global textual link color.
+$link-color:            $brand-primary !default;
+//** Link hover color set via `darken()` function.
+$link-hover-color:      $brand-red !default;
+//** Link hover decoration.
+$link-hover-decoration: none !default;
+
+$input-border-focus:             $brand-primary;
+
+//== Navbar
+//
+//##
+
+// Basics of a navbar
+$navbar-height:                    100px !default;
+//$navbar-margin-bottom:             $line-height-computed !default;
+//$navbar-border-radius:             $border-radius-base !default;
+//$navbar-padding-horizontal:        floor(($grid-gutter-width / 2)) !default;
+//$navbar-padding-vertical:          (($navbar-height - $line-height-computed) / 2) !default;
+//$navbar-collapse-max-height:       340px !default;
+
+//$navbar-default-color:             #777 !default;
+$navbar-default-bg:                $brand-red; // #f8f8f8 !default;
+//$navbar-default-border:            #f8f8f8 !default; // darken($navbar-default-bg, 6.5%) !default;
+
+// Navbar links
+$navbar-default-link-color:                $brand-primary; // #777 !default;
+$navbar-default-link-hover-color:          $brand-red; // #333 !default;
+$navbar-default-link-hover-bg:             $brand-primary; //transparent !default;
+$navbar-default-link-active-color:         $brand-primary; // #555 !default;
+$navbar-default-link-active-bg:            $brand-red; // darken($navbar-default-bg, 6.5%) !default;
+//$navbar-default-link-disabled-color:       #ccc !default;
+//$navbar-default-link-disabled-bg:          transparent !default;
+
+// Navbar brand label
+//$navbar-default-brand-color:               $navbar-default-link-color !default;
+//$navbar-default-brand-hover-color:         darken($navbar-default-brand-color, 10%) !default;
+//$navbar-default-brand-hover-bg:            transparent !default;
+
+// Navbar toggle
+$navbar-default-toggle-hover-bg:           $brand-primary !default;
+$navbar-default-toggle-icon-bar-bg:        $brand-primary !default;
+$navbar-default-toggle-border-color:       $brand-primary !default;
+
+//== Typography
+
+$font-family-sans-serif:  "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-serif:       "Playfair Display", Georgia, "Times New Roman", Times, serif !default;

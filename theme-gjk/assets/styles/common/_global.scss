@@ -1,0 +1,94 @@
+.main {
+  border-right: 1px solid #eee;
+}
+
+.navbar-title {
+  height: 60px;
+  @include navbar-vertical-align(60px);
+}
+
+h1, h2, h3 {
+  font-family: $font-family-serif;
+}
+
+.navbar {
+  font-family: "Playfair Display";
+  letter-spacing: 0.2em;
+  border: 0px solid transparent;
+}
+
+footer {
+  min-height: 100px;
+  border-top: 1px solid #f8f8f8;
+}
+
+.container {
+  @include container-fixed;
+
+  @media (min-width: $screen-sm-min) {
+    width: $container-sm;
+  }
+  @media (min-width: $screen-md-min) {
+    width: $container-md;
+  }
+  @media (min-width: $screen-lg-min) {
+    width: $container-md;
+  }
+}
+
+// Navbar nav links
+//
+// Builds on top of the `.nav` components with its own modifier class to make
+// the nav the full height of the horizontal nav (above 768px).
+
+.navbar-nav {
+  margin: ($navbar-padding-vertical / 2) (-$navbar-padding-horizontal);
+
+  > li > a {
+    padding-top:    10px;
+    padding-bottom: 10px;
+    line-height: $line-height-computed;
+  }
+
+  @media (max-width: $grid-float-breakpoint-max) {
+    // Dropdowns get custom display when collapsed
+    .open .dropdown-menu {
+      position: static;
+      float: none;
+      width: auto;
+      margin-top: 0;
+      background-color: transparent;
+      border: 0;
+      box-shadow: none;
+      > li > a,
+      .dropdown-header {
+        padding: 5px 15px 5px 25px;
+      }
+      > li > a {
+        line-height: $line-height-computed;
+        &:hover,
+        &:focus {
+          background-image: none;
+        }
+      }
+    }
+  }
+
+  // Uncollapse the nav
+  @media (min-width: $grid-float-breakpoint) {
+    float: left;
+    margin: 0;
+
+    > li {
+      float: left;
+      > a {
+        margin-top:     22px;
+        padding-top:    40px;
+        padding-bottom: 17px;
+        border-top:     1px solid $brand-primary;
+      }
+    }
+  }
+}
+
+
